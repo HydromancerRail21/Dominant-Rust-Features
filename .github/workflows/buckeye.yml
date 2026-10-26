@@ -1,0 +1,28 @@
+name: "Crystal"
+run-name: "Headland"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  Wolfsbane:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.CITRINE.outputs.page_url }}
+    steps:
+      - name: "Canvas"
+        uses: actions/checkout@v5
+      - name: "PLATEAU"
+        uses: actions/configure-pages@v6
+      - name: "Column"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+      - name: "Umbra"
+        id: CITRINE
+        uses: actions/deploy-pages@v5
